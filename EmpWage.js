@@ -163,3 +163,28 @@ console.log("UC 11C Part working days: " + partWorkingDaysArr);
 let nonWorkingDayNums = empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0)
     .map(dailyHrsAndWage => dailyHrsAndWage.dayNum);
 console.log("UC 11D nonWorkingDayNums : " + nonWorkingDayNums);
+
+
+class EmployeePayrollData {
+    id;
+    salary;
+    name;
+
+    constructor(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    get name() { return this.name; }
+    set name(name) { this.name = name; }
+
+    toString() {
+        return "id = " + this.id + ", name = " + this.name + ", salary = " + this.salary;
+    }
+}
+
+let employee = new EmployeePayrollData(1, "Mark", 30000);
+console.log(employee.toString());
+employee.name = "John";
+console.log(employee.toString());
